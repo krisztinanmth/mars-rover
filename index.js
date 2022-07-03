@@ -1,37 +1,32 @@
-const cardinals = {
-  E: {
-    L: 'N',
-    R: 'S',
-    F: (x, y) => ({ x: x + 1, y })
-  },
-  S: {
-    L: 'E',
-    R: 'W',
-    F: (x, y) => ({ x, y: y - 1 })
-  },
-  W: {
-    L: 'S',
-    R: 'N',
-    F: (x, y) => ({ x: x + 1, y })
-  },
-  N: {
-    L: 'W',
-    R: 'E',
-    F: (x, y) => ({ x, y: y + 1 })
-  },
-}
-
 const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args)
 
-const turnLeft = ({ facing, ...position }) => ({
-  ...position,
-  facing: cardinals[facing].L
-})
+const turnLeft = ({ facing, ...position }) => {
+  const leftLookup = {
+    E: 'N',
+    S: 'E',
+    W: 'S',
+    N: 'W',
+  }
 
-const turnRight = ({ facing, ...position }) => ({
-  ...position,
-  facing: cardinals[facing].R
-})
+  return {
+    ...position,
+    facing: leftLookup[facing]
+  }
+}
+
+const turnRight = ({ facing, ...position }) => {
+  const rightLookup = {
+    E: 'S',
+    S: 'W',
+    W: 'N',
+    N: 'E',
+  }
+
+  return {
+    facing: rightLookup[facing],
+    ...position,
+  }
+}
 
 /**
  * TODO:
@@ -54,13 +49,19 @@ const turnRight = ({ facing, ...position }) => ({
 
 
 const moveForward = ({ x, y, facing }) => {
+  const forwardLookup = {
+    E: (x, y) => ({ x: x + 1, y }),
+    S: (x, y) => ({ x, y: y - 1 }),
+    W: (x, y) => ({ x: x + 1, y }),
+    N: (x, y) => ({ x: x + 1, y }),
+  }
   /**
    * FIXME: this function should respect the boundaries of the grid
    * - should not move forward any more 
    * - should save last valid position of rover
    * - and should turn isLost flag to true -> will be used later for output LOST
    */
-  const newPosition = cardinals[facing].F(x, y)
+  const newPosition = forwardLookup[facing](x, y)
   return {
     x: newPosition.x,
     y: newPosition.y,
