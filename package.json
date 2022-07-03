@@ -16,7 +16,8 @@
     "url": "https://github.com/krisztinanmth/mars-rover/issues"
   },
   "homepage": "https://github.com/krisztinanmth/mars-rover#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "jest": "^28.1.2"
   }
 }
