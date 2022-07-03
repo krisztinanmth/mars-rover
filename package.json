@@ -1,0 +1,22 @@
+{
+  "name": "mars-rover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisztinanmth/mars-rover.git"
+  },
+  "author": "krisztina nemeth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krisztinanmth/mars-rover/issues"
+  },
+  "homepage": "https://github.com/krisztinanmth/mars-rover#readme",
+  "dependencies": {
+    "jest": "^28.1.2"
+  }
+}
