@@ -1,4 +1,3 @@
-// TODO: validate args
 const myArgs = process.argv.slice(2)
 const [ boundaryY, boundaryX, x, y, direction, moves ] = myArgs
 
@@ -60,15 +59,6 @@ const turnRight = (roverState) => {
     ...position,
   }
 }
-
-/**
- * 
- * TODO: 
- * 
- * A little documentation goes a long way. If you can, include a readme file that tells us how to run your project.
- * 
- * TODO: MUST!
- */
 
 const pipe = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args)
 
