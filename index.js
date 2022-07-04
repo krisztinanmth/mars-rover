@@ -82,5 +82,4 @@ module.exports = {
   moveForward,
   turnLeft,
   turnRight,
-  moveRover,
 }
