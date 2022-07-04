@@ -6,6 +6,7 @@
 2. run `node index.js 4 8 0 2 N FFLFRFF` from your command line 
   (the args required in respective order - grid size(m), grid size(n), posX of rover, posY of rover, direction of rover, moves(possible chars 'L', 'R', 'F'))
   **more examples:**
+  
     1. `4 8 0 2 N FFLFRFF`
     1. `4 8 0 2 N FFLFRFF`
     1. `4 8 0 2 N FFLFRFF`
